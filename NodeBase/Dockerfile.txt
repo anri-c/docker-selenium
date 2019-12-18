@@ -11,8 +11,8 @@ RUN apt-get update -qqy \
 #==============================
 # Locale and encoding settings
 #==============================
-ENV LANG_WHICH en
-ENV LANG_WHERE US
+ENV LANG_WHICH ja
+ENV LANG_WHERE JP
 ENV ENCODING UTF-8
 ENV LANGUAGE ${LANG_WHICH}_${LANG_WHERE}.${ENCODING}
 ENV LANG ${LANGUAGE}
@@ -20,7 +20,7 @@ ENV LANG ${LANGUAGE}
 # Layer size: small: ~9 MB MB (with --no-install-recommends)
 RUN apt-get -qqy update \
   && apt-get -qqy --no-install-recommends install \
-    language-pack-en \
+    language-pack-ja \
     tzdata \
     locales \
   && locale-gen ${LANGUAGE} \
